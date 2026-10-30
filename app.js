@@ -1,15 +1,16 @@
 import express from "express";
+import booksRoutes from "./src/routes/books.js";
 
 const app = express();
 
-// Middleware to parse incoming JSON requests
 app.use(express.json());
 
 // Root route
 app.get("/", (req, res) => {
-  return res.status(200).json({
-    message: "CSE341 Books API is running!",
-  });
+  res.json({ message: "CSE341 Books API is running!" });
 });
+
+// Books routes
+app.use("/books", booksRoutes);
 
 export default app;
