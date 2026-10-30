@@ -1,0 +1,16 @@
+{
+  "name": "cse341-books-api",
+  "version": "1.0.0",
+  "description": "CSE341 Week 1 Books Web Service",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --env-file=.env server.js",
+    "dev": "nodemon --env-file=.env server.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
