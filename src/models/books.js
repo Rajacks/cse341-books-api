@@ -8,3 +8,11 @@ export const getAllBooks = async () => {
     .find({}, { projection: { _id: 0 } })
     .toArray();
 };
+
+export const getBookById = async (id) => {
+  const db = getDb();
+
+  return await db
+    .collection("books")
+    .findOne({ id }, { projection: { _id: 0 } });
+};
