@@ -11,7 +11,7 @@ export const getAllAuthorsController = async (req, res) => {
   try {
     const authors = await getAllAuthors();
     res.status(200).json(authors);
-  } catch (error) {
+  } catch {
     res.status(500).json({ message: "Failed to retrieve authors." });
   }
 };
@@ -26,7 +26,7 @@ export const getAuthorByIdController = async (req, res) => {
     }
 
     res.status(200).json(author);
-  } catch (error) {
+  } catch {
     res.status(500).json({ message: "Failed to retrieve author." });
   }
 };
@@ -61,7 +61,7 @@ export const createAuthorController = async (req, res) => {
     await createAuthor(author);
 
     res.status(201).json(author);
-  } catch (error) {
+  } catch {
     res.status(500).json({ message: "Failed to create author." });
   }
 };
@@ -93,7 +93,7 @@ export const updateAuthorController = async (req, res) => {
     }
 
     res.status(200).json(author);
-  } catch (error) {
+  } catch {
     res.status(500).json({ message: "Failed to update author." });
   }
 };
@@ -114,7 +114,7 @@ export const deleteAuthorController = async (req, res) => {
     }
 
     res.status(204).send();
-  } catch (error) {
+  } catch {
     res.status(500).json({ message: "Failed to delete author." });
   }
 };
