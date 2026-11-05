@@ -23,9 +23,7 @@ export const getBookById = async (id) => {
 export const authorExists = async (authorId) => {
   const db = getDb();
 
-  const author = await db.collection("authors").findOne({
-    id: Number(authorId),
-  });
+  const author = await db.collection("authors").findOne({ id: authorId });
 
   return Boolean(author);
 };
